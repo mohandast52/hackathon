@@ -1,14 +1,8 @@
-import Head from "next/head";
 import { connectToDatabase } from "../util/mongodb";
 
 export default function Home({ isConnected }) {
   return (
     <div className="container">
-      <Head>
-        <title>Hackathon</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <h1 className="title">Welcome to Hackathon</h1>
 
