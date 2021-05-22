@@ -1,5 +1,7 @@
 import { Container } from 'next/app';
 import Head from 'next/head';
+import Layout from 'components/Layout';
+import GlobalStyle from 'components/GlobalStyles';
 import './styles.less';
 
 const MyApp = ({ Component, pageProps }) => (
@@ -10,8 +12,11 @@ const MyApp = ({ Component, pageProps }) => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Container>
+    <GlobalStyle />
   </>
 );
 

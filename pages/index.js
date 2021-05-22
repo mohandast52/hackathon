@@ -1,4 +1,6 @@
+import { Button } from "antd";
 import { connectToDatabase } from "../util/mongodb";
+import Router from "next/router";
 
 export default function Home({ isConnected }) {
   return (
@@ -7,6 +9,10 @@ export default function Home({ isConnected }) {
         <h1 className="title">Welcome to Hackathon</h1>
 
         <p className="description">We are working on it.</p>
+
+        <Button type="primary" ghost onClick={() => Router.push("/list")}>
+          Let's go
+        </Button>
       </main>
 
       <footer>Powered by haptik</footer>
