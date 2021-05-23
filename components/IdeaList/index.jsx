@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Col, Tag } from 'antd';
+import { Card, Col, Rate, Tag } from 'antd';
 import { StarFilled } from '@ant-design/icons';
 import EachIdea from './EachIdea';
 import { Actions } from './styles';
@@ -31,7 +31,7 @@ const IdeaList = ({ idea_list_dummy }) => {
         } = idea;
 
         return (
-          <Col span={6} key={id}>
+          <Col span={8} key={id}>
             <Card
               hoverable
               onClick={() => showModal(idea)}
@@ -43,7 +43,7 @@ const IdeaList = ({ idea_list_dummy }) => {
               }
               actions={[
                 <Actions>
-                  <StarFilled style={{ color: '#177ddc' }} /> {rating} ({ratings_count})
+                  <Rate allowHalf disabled defaultValue={rating} /> {rating} ({ratings_count})
                 </Actions>
               ]}
             >
@@ -51,7 +51,7 @@ const IdeaList = ({ idea_list_dummy }) => {
                 title={title}
                 description={description}
               />
-              {tags.map(tag => <Tag color="blue">{tag}</Tag>)}
+              {tags.map(tag => <Tag key={`${id}-${tag}`} color="blue">{tag}</Tag>)}
             </Card>
           </Col>
         )

@@ -18,13 +18,14 @@ export const Subheading = styled.span`
   display: inline-block;
   margin-right: 4px;
   font-weight: bold;
+  text-decoration: underline;
 `;
 
 export const Title = styled.div`
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 4px;
+  /* text-underline-offset: 4px; */
   margin: 0 0 2rem 0;
   font-weight: 600;
 `;
@@ -68,6 +69,9 @@ export const Container = styled.div`
     .column-side-3 {
       padding-left: 16px;
       border-left: 1px solid #cccccc38;
+      .ant-btn {
+        margin-top: 12px;
+      }
     }
   }
 

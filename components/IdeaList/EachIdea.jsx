@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Modal, Rate } from 'antd';
+import { Row, Col, Modal, Rate, Button } from 'antd';
 import { idea_list_dummy } from 'util/values';
 import { Container, Name, Title, Reason, Info, Subheading } from './styles';
 
@@ -53,11 +53,12 @@ const EachIdea = ({
           </Col>
           <Col span={8} className="column-side-3">
             Rate Me: <Rate allowHalf defaultValue={0} />
+            <Button type="primary" disabled>Fund Me!</Button>
           </Col>
         </Row>
       </Container>
 
-      <Container>
+      {/* <Container>
         <Title>Reasons</Title>
         <Row className="reasons">
           {reasons.map(({ img, info }) => {
@@ -74,7 +75,7 @@ const EachIdea = ({
             )
           })}
         </Row>
-      </Container>
+      </Container> */}
     </Modal>
   )
 }

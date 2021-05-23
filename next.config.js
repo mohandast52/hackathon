@@ -16,4 +16,7 @@ module.exports = {
       },
     })
   ),
+  env: {
+    URL_PATH: process.env.URL_PATH,
+  },
 };

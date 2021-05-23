@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Row, Divider, Tabs } from 'antd';
 import IdeaList from '../IdeaList';
 import { NEW_IDEAS, idea_list_dummy } from 'util/values';
@@ -6,17 +6,25 @@ import { Container, Title } from './styles';
 
 const { TabPane } = Tabs;
 
-const TAB_NAMES = ['All'];
-idea_list_dummy.forEach(({ tags }) => {
-  tags.forEach((tag) => {
-    if (!TAB_NAMES.includes(tag)) {
-      TAB_NAMES.push(tag);
-    }
-  })
-});
+// const getData = () => fetch(`/api/ideas`).then((res) => res.json())
+
+const getTabNames = () => {
+  const TAB_NAMES = ['All'];
+  idea_list_dummy.forEach(({ tags }) => {
+    tags.forEach((tag) => {
+      if (!TAB_NAMES.includes(tag)) TAB_NAMES.push(tag);
+    })
+  });
+  return TAB_NAMES;
+}
 
 const Demo = () => {
   const [list, setIList] = useState(idea_list_dummy);
+
+  // setData(data)
+  // useEffect(() => {
+  //   getData().then((data) => console.log(data));
+  // }, []);
 
   const callback = (key) => {
     const temp = key === 'All' ?
@@ -38,7 +46,7 @@ const Demo = () => {
         <Title>Ideas</Title>
         <Tabs onChange={callback}>
           {
-            TAB_NAMES.map((name) => {
+            getTabNames().map((name) => {
               return (
                 <TabPane tab={name} key={name}>
                   <Row>

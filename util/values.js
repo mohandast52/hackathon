@@ -23,12 +23,12 @@ export const EG_IDEA = [
       },
     ],
     members_involed: [
-      { name: "Name 1", title: "Software Engineer" },
-      { name: "Name 2", title: "Software Engineer" },
-      { name: "Name 3", title: "Marketing" },
-      { name: "Name 4", title: "Product Manager" },
+      { name: "Rachel Karen Green", title: "Software Engineer" },
+      { name: "Phoebe Buffay", title: "Software Engineer" },
+      { name: "Joseph Francis Tribbiani", title: "Marketing" },
+      { name: "Monica E. Geller", title: "Product Manager" },
     ],
-    mentors: [{ name: "Name 1", title: "Engineering Manager" }],
+    // mentors: [{ name: "Name 1", title: "Engineering Manager" }],
   },
 ];
 
@@ -54,6 +54,13 @@ export const idea_list_dummy = [
     ratings_count: 6,
     tags: ["App", "AI", "Innovation"],
     icon: "https://i.ibb.co/zhjNFTv/2.png",
+    members_involed: [
+      { name: "Ursula", title: "Software Engineer" },
+      { name: "Chandler Muriel Bing", title: "Software Engineer" },
+      { name: "Rose Galler", title: "Marketing" },
+      { name: "Monica Galler", title: "Product Manager" },
+    ],
+    // 
   },
   {
     ...EG_IDEA[0],
@@ -64,6 +71,9 @@ export const idea_list_dummy = [
     rating: 4.5,
     tags: ["AI", "Bot"],
     icon: "https://i.ibb.co/VjFrY8C/3.png",
+    members_involed: [
+      { name: "Phoebe Buffay Hannigan", title: "Software Engineer" },
+    ],
   },
   {
     ...EG_IDEA[0],
@@ -75,6 +85,9 @@ export const idea_list_dummy = [
     rating: 4,
     tags: ["Innovation", "App", "AI"],
     icon: "https://i.ibb.co/F8RZXJ5/4.png",
+    members_involed: [
+      { name: "Dr. Richard Burke", title: "Product Manager" },
+    ],
   },
   {
     ...EG_IDEA[0],
@@ -86,6 +99,9 @@ export const idea_list_dummy = [
     rating: 4,
     tags: ["Innovation"],
     icon: "https://i.ibb.co/cFRngKj/5.png",
+    members_involed: [
+      { name: "Kathy", title: "Product Manager" },
+    ],
   },
   {
     ...EG_IDEA[0],
@@ -97,6 +113,23 @@ export const idea_list_dummy = [
     tags: ["Education"],
     rating: 3,
     icon: "https://i.ibb.co/gwt9fHk/6.png",
+    members_involed: [
+      { name: "Mike Hannigan", title: "Product Manager" },
+    ],
+  },
+  {
+    ...EG_IDEA[0],
+    id: "1013",
+    title: "Jockify",
+    description:
+      "Test your jokes with all other comedians helping you twist them into that perfect joke. ",
+    rating: 4.5,
+    ratings_count: 6,
+    tags: ["Meme", "Others"],
+    icon: "https://i.ibb.co/YX8XLgJ/10.png",
+    members_involed: [
+      { name: "Emma Geller Green", title: "Product Manager" },
+    ],
   },
 ];
 
@@ -111,10 +144,13 @@ export const NEW_IDEAS = [
     rating: 3.5,
     tags: ["App", "Social"],
     icon: "https://i.ibb.co/LnjBt2p/7.png",
+    members_involed: [
+      { name: "Emma Geller Green", title: "Product Manager" },
+    ],
   },
   {
     ...EG_IDEA[0],
-    id: "102",
+    id: "1011",
     title: "Finman",
     description:
       "App that is a wholesome collection of all your financial documents, right from insurance to passbooks. They send you alerts about expiry date, payments, withdrawals, etc, it's like one wholesome app to manage all your holdings",
@@ -125,7 +161,7 @@ export const NEW_IDEAS = [
   },
   {
     ...EG_IDEA[0],
-    id: "102",
+    id: "1012",
     title: "Imagolife",
     description:
       "Convert your ideas through Voice to the image. No need to write those lengthy creative briefs. You can thank us, centuries later",
@@ -134,17 +170,7 @@ export const NEW_IDEAS = [
     tags: ["Voice AI", "AI"],
     icon: "https://i.ibb.co/YNP5ff8/9.png",
   },
-  {
-    ...EG_IDEA[0],
-    id: "102",
-    title: "Jockify",
-    description:
-      "Test your jokes with all other comedians helping you twist them into that perfect joke. ",
-    rating: 4.5,
-    ratings_count: 6,
-    tags: ["Meme", "Others"],
-    icon: "https://i.ibb.co/YX8XLgJ/10.png",
-  },
+
 ];
 
 // https://i.ibb.co/cFRngKj/5.png
