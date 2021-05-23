@@ -16,7 +16,7 @@ const EachIdea = ({
     members_involed,
     icon,
     rating
-  } = idea;
+  } = idea || {};
 
   return (
     <Modal title={title} visible={isModalVisible} onCancel={handleCancel}
