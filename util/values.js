@@ -41,7 +41,7 @@ export const idea_list_dummy = [
     description: "Hello",
     rating: 2.5,
     ratings_count: 6,
-    tags: ["Agriculture", "AI"],
+    tags: ["Agriculture", "AI", "Innovation"],
   },
   {
     ...idea_list[0],
@@ -55,14 +55,14 @@ export const idea_list_dummy = [
     id: "104",
     ratings_count: 40,
     rating: 4,
-    tags: ["Innovation", "Logistics"],
+    tags: ["Innovation", "Logistics", "AI"],
   },
   {
     ...idea_list[0],
     id: "105",
     ratings_count: 4,
     rating: 4,
-    tags: ["Covid"],
+    tags: ["Covid", "AI"],
   },
   {
     ...idea_list[0],

@@ -4,7 +4,7 @@ export const Container = styled.div`
   .ant-row {
     row-gap: 24px !important;
     .ant-card {
-      margin: 0 auto;
+      /* margin: 0 auto; */
       width: 240px;
       .ant-card-meta-description {
         overflow: hidden;
@@ -23,4 +23,10 @@ export const Container = styled.div`
       }
     }
   }
+`;
+
+export const Title = styled.h2`
+  font-size: 26px;
+  color: #177ddc;
+  text-decoration: underline;
 `;
