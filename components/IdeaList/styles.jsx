@@ -1,17 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  font-size: 1.2em;    
-  padding-bottom: 60px;
-
-  img.idea-img { 
-    margin: 24px auto;
-    display: block;
-  }
-`;
-
 export const Name = styled.div`
-  font-size: 2em;
+  /* font-size: 2em; */
   font-weight: 600;
   text-shadow: 4px 4px 5px #7575755c;
   letter-spacing: 6px;
@@ -53,5 +43,41 @@ export const Reason = styled.div`
     margin-top: 1rem;
     text-align: center;
     /* font-size: 1.2em; */
+  }
+`;
+
+export const Container = styled.div`
+  /* font-size: 1.2em;     */
+  padding-bottom: 20px;
+
+  img.idea-img { 
+    margin: 6px auto;
+    display: block;
+  }
+
+  .row-1 {
+    .column-side-2 {
+      padding-right: 16px;
+    }
+    .column-side-3 {
+      padding-left: 16px;
+      border-left: 1px solid #cccccc38;
+    }
+  }
+
+  .reasons {
+    ${Reason} {
+      width: 224px;
+    }
+  }
+`;
+
+// --------------
+export const Actions = styled.div`
+  width: auto !important;
+  border: none !important;
+  margin: 0;
+  &:nth-child(1){
+    /* margin-top: 4px; */
   }
 `;

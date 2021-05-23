@@ -1,17 +1,13 @@
 import React from 'react'
-import { Row, Col } from 'antd';
+import { Row, Col, Modal, Rate } from 'antd';
 import { idea_list, idea_list_dummy } from 'util/values';
 import { Container, Name, Title, Reason, Info, Subheading } from './styles';
 
-const EachIdea = ({ idea_id }) => {
-  const idea = idea_list_dummy.find(({ id }) => id === idea_id);
-
-  if (!idea) {
-    return (
-      <div className="invalid-message">Invalid Id</div>
-    );
-  }
-
+const EachIdea = ({
+  idea,
+  isModalVisible,
+  handleCancel,
+}) => {
   const {
     title,
     description,
@@ -23,9 +19,13 @@ const EachIdea = ({ idea_id }) => {
   } = idea;
 
   return (
-    <div>
+    <Modal title={title} visible={isModalVisible} onCancel={handleCancel}
+      width={900}
+      style={{ top: 20 }}
+      footer={null}
+    >
       <Container>
-        <Row>
+        <Row className="row-1">
           <Col span={8}>
             <img
               alt="example"
@@ -33,9 +33,8 @@ const EachIdea = ({ idea_id }) => {
               className="idea-img"
             />
           </Col>
-          <Col span={8}>
+          <Col span={8} className="column-side-2">
             <Info>
-              <Name>{title}</Name>
               <div><Subheading>Date:</Subheading>{suggested_on}</div>
               <div><Subheading>Rating:</Subheading>{rating}</div>
               <div><Subheading>Description:</Subheading>{description}</div>
@@ -52,12 +51,15 @@ const EachIdea = ({ idea_id }) => {
               </div>
             </Info>
           </Col>
+          <Col span={8} className="column-side-3">
+            Rate Me: <Rate allowHalf defaultValue={0} />
+          </Col>
         </Row>
       </Container>
 
       <Container>
         <Title>Reasons</Title>
-        <Row>
+        <Row className="reasons">
           {reasons.map(({ img, info }) => {
             return (
               <Col span={8}>
@@ -73,7 +75,7 @@ const EachIdea = ({ idea_id }) => {
           })}
         </Row>
       </Container>
-    </div>
+    </Modal>
   )
 }
 

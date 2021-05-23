@@ -1,44 +1,68 @@
-import { Card, Col } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { idea_list, idea_list_dummy } from 'util/values';
+import { useState } from 'react';
+import { Card, Col, Tag } from 'antd';
+import { StarFilled } from '@ant-design/icons';
+import EachIdea from './EachIdea';
+import { Actions } from './styles';
 
 const { Meta } = Card;
 
-const IdeaList = () => {
+const IdeaList = ({ idea_list_dummy }) => {
+  const [currentIdea, setIdea] = useState(null);
+
+  const showModal = (idea) => {
+    setIdea(idea);
+  };
+
+  const handleCancel = () => {
+    setIdea(null);
+  };
+
   return (
     <>
-      {idea_list_dummy.map(({
-        id,
-        title,
-        description,
-      }) => {
+      {idea_list_dummy.map((idea) => {
+        const {
+          id,
+          title,
+          description,
+          rating,
+          ratings_count,
+          tags
+        } = idea;
+
         return (
-          <Col span={8} key={id}>
-            <a target="_blank" href={`/list/${id}`} rel="noopener noreferrer">
-              <Card
-                hoverable
-                style={{ width: 300 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://fakeimg.pl/250x160/"
-                  />
-                }
-                actions={[
-                  <SettingOutlined key="setting" />,
-                  <EditOutlined key="edit" />,
-                  <EllipsisOutlined key="ellipsis" />,
-                ]}
-              >
-                <Meta
-                  title={title}
-                  description={description}
+          <Col span={6} key={id}>
+            <Card
+              hoverable
+              onClick={() => showModal(idea)}
+              cover={
+                <img
+                  alt="example"
+                  src="https://fakeimg.pl/250x160/"
                 />
-              </Card>
-            </a>
+              }
+              actions={[
+                <Actions>
+                  <StarFilled style={{ color: '#177ddc' }} /> {rating} ({ratings_count})
+                </Actions>
+              ]}
+            >
+              <Meta
+                title={title}
+                description={description}
+              />
+              {tags.map(tag => <Tag color="blue">{tag}</Tag>)}
+            </Card>
           </Col>
         )
       })}
+
+      {currentIdea && (
+        <EachIdea
+          isModalVisible={!!currentIdea}
+          idea={currentIdea}
+          handleCancel={handleCancel}
+        />
+      )}
     </>
   )
 };
