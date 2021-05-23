@@ -26,7 +26,8 @@ const IdeaList = ({ idea_list_dummy }) => {
           description,
           rating,
           ratings_count,
-          tags
+          tags,
+          icon
         } = idea;
 
         return (
@@ -37,7 +38,7 @@ const IdeaList = ({ idea_list_dummy }) => {
               cover={
                 <img
                   alt="example"
-                  src="https://fakeimg.pl/250x160/"
+                  src={icon || "https://fakeimg.pl/250x160"}
                 />
               }
               actions={[

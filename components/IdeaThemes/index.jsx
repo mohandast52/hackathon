@@ -1,21 +1,10 @@
 import { useState } from 'react';
 import { Row, Divider, Tabs } from 'antd';
 import IdeaList from '../IdeaList';
-import { idea_list, idea_list_dummy } from 'util/values';
+import { NEW_IDEAS, idea_list_dummy } from 'util/values';
 import { Container, Title } from './styles';
 
-const THEMES = [
-  { key: 'all', name: 'All' },
-  { key: 'hack_for_good', name: 'Hack for good' },
-  { key: 'improvements', name: 'Improvements' },
-  { key: 'entertainment', name: 'Entertainment' },
-  { key: 'others', name: 'Others' },
-];
-
 const { TabPane } = Tabs;
-
-
-const newIdeas = idea_list_dummy.slice(0, 4);
 
 const TAB_NAMES = ['All'];
 idea_list_dummy.forEach(({ tags }) => {
@@ -41,7 +30,7 @@ const Demo = () => {
       <Container>
         <Title>New Ideas</Title>
         <Row>
-          <IdeaList idea_list_dummy={newIdeas} />
+          <IdeaList idea_list_dummy={NEW_IDEAS} />
         </Row>
         <Divider />
         <Divider />

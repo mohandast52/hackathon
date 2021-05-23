@@ -56,6 +56,12 @@ export const Container = styled.div`
   }
 
   .row-1 {
+    .column-side-1 {
+      padding-right: 24px;
+      img {
+        width: 100%;
+      }
+    }
     .column-side-2 {
       padding-right: 16px;
     }

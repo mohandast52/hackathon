@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Modal, Rate } from 'antd';
-import { idea_list, idea_list_dummy } from 'util/values';
+import { idea_list_dummy } from 'util/values';
 import { Container, Name, Title, Reason, Info, Subheading } from './styles';
 
 const EachIdea = ({
@@ -26,7 +26,7 @@ const EachIdea = ({
     >
       <Container>
         <Row className="row-1">
-          <Col span={8}>
+          <Col span={8} className="column-side-1">
             <img
               alt="example"
               src={icon || "https://fakeimg.pl/200x260/"}
